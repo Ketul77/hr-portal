@@ -1,0 +1,185 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Portal</title>
+    <style>
+        /* Resetting default browser styles */
+        body,
+        h1,
+        h2,
+        p,
+        ul,
+        li,
+        address {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+
+        section h2 {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 24px;
+            }
+            nav ul li {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Contact section specific styles */
+        #contact {
+            background-color: #f9f9f9;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        #contact address {
+            margin-top: 20px;
+            font-style: normal;
+        }
+
+        /* Button styles */
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    /* Button container styles */
+    text-align: center;
+
+
+}
+
+
+
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to the HR Portal</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Welcome to our HR portal. We strive to provide comprehensive HR solutions tailored to meet your organization's needs.</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>Recruitment and Hiring</li>
+            <li>Employee Training and Development</li>
+            <li>Performance Management</li>
+            <li>Employee Relations</li>
+            <li>Compensation and Benefits</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or inquiries, feel free to reach out to us:</p>
+        <address>
+            HR Portal<br>
+            123 HR Street<br>
+            HR City, HR 12345<br>
+            Phone: 123-456-7890<br>
+            Email: info@hrportal.com
+        </address>
+        <button onclick="redirectToApp()">Go to HR App</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 HR Portal. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function redirectToApp() {
+            // Replace 'your-app-scheme://' with the actual scheme of your application
+            window.location.href = '{% url 'login' %}';
+        }
+    </script>
+    
+  
+</body>
+
+</html>

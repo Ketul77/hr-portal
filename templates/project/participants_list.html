@@ -1,0 +1,134 @@
+{% extends "../base.html" %}
+
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% block head %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* CSS to center the card */
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+    .card {
+      width: 80%; /* Adjust the width of the card as needed */
+    }
+  </style>
+  {% endblock %}
+</head>
+<body>
+  <div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title"> CELEBRATION LIST</h4>
+        
+        {% if user.is_authenticated %}
+        <p>Welcome, {{ user.username }}</p>
+        {% endif %}
+        <div class="celebrations">
+            
+               <div class="table-responsive">
+                  <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>user</th>
+                        <th>celebration_participants</th>
+                        <th>department</th>
+                        <th>celebration</th>
+                        <th>status</th>
+                        <th>Action</th> 
+                    </tr>
+                    {% comment %} <td class="align-middle">
+                        <a href="{% url 'celebration_edit' c.pk %}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                            EDIT
+                        </a> {% endcomment %}
+                        {% comment %} <a href="{% url 'celebration_list' c.pk %}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Detail">
+                            DETAIL
+                        </a>
+                        <a href="{% url 'celebration_delete' c.pk %}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Delete">
+                            DELETE
+                        </a> {% endcomment %}
+                    
+                        
+                          {% comment %} <a href="" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                            CREATE TEAM
+                          </a> {% endcomment %}
+                        </td>
+                    </tr> 
+                </thead>
+                <tbody>
+                    {% for c in celebrations %}
+                        <tr>
+                            <td>{{ c.user }}</td>
+                            <td>{{ c.celebration_participants }}</td>
+                            <td>{{ c.department }}</td>
+                            <td>{{ c.celebration }}</td>
+                            <td>{{ c.status }}</td>
+                            <td>{{ c.action }}</td>
+                            <td class="align-middle">
+                              <a href="{% url 'participantsupdate' c.pk %}"  class="btn btn-danger">
+                                  UPDATE
+                              </a>
+                            </td>
+                              <td class="align-middle">
+                              <a href="{% url 'participantsdetail' c.pk %}"  class="btn btn-danger" >
+                                DETAIL
+                            </a> 
+                          </td>
+                            <td class="align-middle">
+                              <a href="{% url 'participantsdelete' c.pk %}" class="btn btn-danger">Delete</a>
+                          </td>
+                            <!-- ... other celebration fields ... -->
+                        </tr>
+                    {% endfor %}
+                    {% if celebrations|length == 0 %}
+                        <tr>
+                            <td colspan="6">No celebrations available</td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+                
+            </table>
+        </div>
+          <div class="add-list" >
+            {% comment %} <h2 >Add List</h2>  {% endcomment %}
+            {% comment %} <form action="#" method="post"> {% endcomment %}
+                {% comment %} <input type="text" name="description" placeholder="Description" required>
+                <input type="number" name="amount" placeholder="Amount" min="0" step="0.01" required>
+                <input type="date" name="date" required>  
+              <input type="submit" value="Add List">
+            </form>  {% endcomment %}
+        </div> 
+        <style>
+            /* Centering the button horizontally */
+            .btn-container {
+              display: flex;
+              justify-content: center;
+            }
+          </style>
+          <div class="btn-container">
+
+            <button type="add" class="btn btn-primary mr-2">
+              <a href="{% url 'participants_create' %}" class="btn btn-primary">ADD</a>
+            </button>
+          <button type="add" class="btn btn-primary mr-2">
+            <a href="{% url 'login' %}" class="btn btn-primary">LOGOUT</a>
+          </button>  
+    </div>
+</body>
+
+</html>
+
+{% endblock content %}

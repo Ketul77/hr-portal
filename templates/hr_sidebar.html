@@ -1,0 +1,112 @@
+
+{% load static %}
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+  <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+       <a class="sidebar-brand brand-logo" href="{% static 'dashboard.html' %}">
+          <img src="{% static 'assets1/images/logo.svg' %}" alt="logo">
+      </a>
+      <a class="sidebar-brand brand-logo-mini" href="{% static 'dashboard.html' %}">
+          <img src="{% static 'assets1/images/logo-mini.svg' %}" alt="logo">
+      </a>
+  </div>
+  <ul class="nav">
+      <li class="nav-item profile">
+          <!-- Profile content -->
+      </li>
+      <li class="nav-item nav-category">
+          <span class="nav-link">Navigation</span>
+      </li>
+      <li class="nav-item menu-items">
+          <a class="nav-link" href="{% url 'hr_dashboard'%}">
+              <span class="menu-icon">
+                  <i class="mdi mdi-speedometer"></i>
+              </span>
+              <span class="menu-title">Dashboard</span>
+          </a>
+      </li>
+      <!-- Other menu items -->
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+      
+    
+        
+       
+        
+        
+      <li class="nav-item menu-items">
+          <a class="nav-link" href="{% url 'create'%}">
+              <span class="menu-icon">
+                  <i class="mdi mdi-playlist-play"></i>
+              </span>
+              <span class="menu-title">CELEBRATIONS </span>
+          </a>
+      </li>
+      <!-- Other menu items -->
+      <li class="nav-item menu-items">
+          <a class="nav-link" href="{% url 'list'%}">
+              <span class="menu-icon">
+                  <i class="mdi mdi-table-large"></i>
+              </span>
+              <span class="menu-title">CELEBRATION LIST</span>
+          </a>
+      </li>
+
+      <li class="nav-item menu-items">
+          <a class="nav-link" href="{% url 'participants_list'%}">
+              <span class="menu-icon">
+                  <i class="mdi mdi-chart-bar"></i>
+              </span>
+              <span class="menu-title">PARTICIPANTS LIST</span>
+          </a>
+      </li>
+
+      <!-- Other menu items -->
+      <li class="nav-item menu-items">
+          <a class="nav-link" href="{% url 'leavelist'%}">
+              <span class="menu-icon">
+                  <i class="mdi mdi-chart-bar"></i>
+              </span>
+              <span class="menu-title">LEAVE LIST</span>
+          </a>
+      </li>
+      <!-- Other menu items -->
+      <li class="nav-item menu-items">
+          <a class="nav-link" href="{% url 'employeecreate'%} ">
+              <span class="menu-icon">
+                  <i class="mdi mdi-contacts"></i>
+              </span>
+              <span class="menu-title">EMPLOYEE CREATE</span>
+          </a>
+      </li>
+
+      <li class="nav-item menu-items">
+          <a class="nav-link" href="{% url 'employeelist'%} ">
+              <span class="menu-icon">
+                  <i class="mdi mdi-contacts"></i>
+              </span>
+              <span class="menu-title">EMPLOYEE LIST</span>
+          </a>
+      </li>
+      <!-- Other menu items -->
+      <li class="nav-item menu-items">
+        <a class="nav-link" href="{% url 'login'%}">
+            <span class="menu-icon">
+                <i class="mdi mdi-laptop"></i>
+            </span>
+            <span class="menu-title">LOGIN</span>
+            <i class="menu-arrow"></i>
+        </a>
+        
+    </li>
+      <!-- Other menu items -->
+      <li class="nav-item menu-items">
+          <a class="nav-link" href="{% url 'logout'%} ">
+              <span class="menu-icon">
+                  <i class="mdi mdi-file-document-box"></i>
+              </span>
+              <span class="menu-title">SIGNOUT</span>
+          </a>
+      </li>
+  </ul>
+</nav>

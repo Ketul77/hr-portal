@@ -1,0 +1,106 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Title -->
+    <title>Admin</title>
+    <!-- External CSS -->
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets1/vendors/mdi/css/materialdesignicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets1/vendors/css/vendor.bundle.base.css' %}">
+    <!-- Plugin CSS for this page -->
+    <link rel="stylesheet" href="{% static 'assets1/vendors/jvectormap/jquery-jvectormap.css' %}">
+    <link rel="stylesheet" href="{% static 'assets1/vendors/flag-icon-css/css/flag-icon.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets1/vendors/owl-carousel-2/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets1/vendors/owl-carousel-2/owl.theme.default.min.css' %}">
+    <!-- End plugin CSS for this page -->
+    <!-- Internal CSS -->
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="{% static 'assets1/css/style.css' %}">
+    <!-- End custom styles -->
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'assets1/images/favicon.png' %}">
+    <!-- Additional CSS -->
+    <style type="text/css">
+        /* Chart.js */
+        @keyframes chartjs-render-animation {
+            from { opacity: 0.99 }
+            to { opacity: 1 }
+        }
+        .chartjs-render-monitor {
+            animation: chartjs-render-animation 1ms
+        }
+        .chartjs-size-monitor,
+        .chartjs-size-monitor-expand,
+        .chartjs-size-monitor-shrink {
+            position: absolute;
+            direction: ltr;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+            visibility: hidden;
+            z-index: -1
+        }
+        .chartjs-size-monitor-expand > div {
+            position: absolute;
+            width: 1000000px;
+            height: 1000000px;
+            left: 0;
+            top: 0
+        }
+        .chartjs-size-monitor-shrink > div {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            left: 0;
+            top: 0
+        }
+    </style>
+</head>
+
+
+<body>
+  
+    <div class="container-scroller d-flex"> 
+        <!-- Sidebar -->
+        {% block sidebar %}
+
+          {% include "hr_sidebar.html"%}
+        {% endblock sidebar %} 
+
+         {% comment %} <div class="container-scroller d-flex"> 
+        <!-- Sidebar -->
+        {% block navbar %}
+
+          {% include "employee_sidebar.html"%}
+        {% endblock navbar %} 
+     {% endcomment %}
+        <div class="container-fluid page-body-wrapper">
+          <!-- Navbar -->
+          {% block nav %}
+            {% include "./navbar.html" %}
+          {% endblock nav %}
+    
+          <!-- Main Content -->
+          <div class="main-panel">
+            <div class="content-wrapper">
+              <div class="row"> 
+                {% block content %}
+                  {# Your content goes here #}
+                {% endblock content %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+</body>
+
+</html>
