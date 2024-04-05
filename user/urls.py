@@ -17,4 +17,6 @@ path("login/",UserLoginView.as_view(),name="login"),
 path("logout/",LogoutView.as_view(),name="logout"),
 path("hr_dashboard/",views.HrDashboardView.as_view(),name="hr_dashboard"),
 path("employee_dashboard/",views.EmployeeDashboardView.as_view(),name="employee_dashboard"),
+
+
 ]

@@ -1,6 +1,14 @@
 {% extends "../base.html" %}
-
+{% block sidebar %}
+    {% if user.is_employee %}
+        {% include "employee_sidebar.html" %}
+    {% else %}
+        {% include "hr_sidebar.html" %}
+    {% endif %}
+{% endblock %}
 {% load static %}
+
+
 {% block content %}
 {% load crispy_forms_tags %}
 <!DOCTYPE html>
@@ -43,22 +51,18 @@
                         <th>user</th>
                         <th>name</th>
                         <th>email</th>
-                        {% comment %} <th>password</th> {% endcomment %}
+                        
                         <th>maritialstatus</th>
                         <th>dateofjoining</th>
                         <th>dateofbirth</th>
                         <th>contactnumber</th>
                         <th>age</th>
-                        {% comment %} <th>department</th> {% endcomment %}
+                       
                         <th>is_hr</th>
                         <th>is_employee</th>
                     </tr>
                     
-                  {% comment %} <td class="align-middle">
-                    <a href="{% url 'deletee' c.pk %}" class="btn btn-danger">
-                      DELETE
-                  </a>
-                  </td> {% endcomment %}
+                  
                 
                     
                     </tr> 
@@ -101,11 +105,9 @@
           <div class="btn-container">
 
             <button type="add" class="btn btn-primary mr-2">
-              <a href="{% url 'employeecreate' %}" class="btn btn-primary">ADD</a>
+              <a href="{% url 'employeecreate' %}" class="btn btn-primary">New employee</a>
             </button>
-          <button type="add" class="btn btn-primary mr-2">
-            <a href="{% url 'login' %}" class="btn btn-primary">LOGOUT</a>
-          </button> 
+         
 
         
 

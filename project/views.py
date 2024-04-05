@@ -6,8 +6,7 @@ from .forms import CelebrationCreationForm, Celebration_participantsCreationForm
 from django.views.generic import ListView
 from django.views.generic import UpdateView, DeleteView, DetailView
 from .models import Celebration, Celebration_participants, Employee
-# from django.utils.decorators import method_decorator
-# from django.contrib.auth.decorators import login_required
+
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.http import HttpResponseRedirect
@@ -60,11 +59,6 @@ class CelebrationUpdateView(UpdateView):
         return self.delete(request,*args,**kwargs)
     success_url='/project/list/'
 
-# class CelebrationDetailView(DetailView):
-#      model=Celebration
-#      def get(self,request,*args,**kwargs):
-#         return self.detail(request,*args,**kwargs)
-#      success_url='/project/detail/'
 
 class CelebrationDetailView(DetailView):
     model = Celebration  
@@ -78,14 +72,7 @@ class CelebrationUpdateView(UpdateView):
     template_name = 'project/create.html'      
     success_url='/project/list/'
     
-    # def get_queryset(self):
-    #     user = self.request.user
-    #     queryset = super().get_queryset().filter(user=user)
-    #     return queryset
     
-    # def celebration_list(request):
-    #     projects = projects.objects.all()
-    #     return render(request, 'project/list.html', {'projects': projects })
         
 
 class Celebration_participantsCreationView(CreateView):
@@ -131,20 +118,6 @@ class LeavecreationView(CreateView):
     form_class = LeaveCreationForm
     success_url = '/project/leavelist'
 
-
-
-# def leave_create(request):
-#     if request.method == 'POST':
-#         form = LeaveCreationForm(request.POST)
-#         if form.is_valid():
-#             # Assign the current logged-in user to the user field
-#             leave = form.save(commit=False)
-#             leave.user = request.user  # Assign the user object
-#             leave.save()
-#             return redirect('leave_list')  # Redirect to the leave list page
-#     else:
-#         form = LeaveCreationForm()
-#     return render(request, 'project/leave_create.html', {'form': form})
 
 
     def form_valid(self, form):
@@ -211,10 +184,19 @@ class EmployeeListView(ListView):
     model = Employee
     context_object_name = "celebrations"
 
-# class EmployeeDeleteView(DeleteView):
-#     model= Employee
-#     def get(self,request,*args,**kwargs):
-#         return self.delete(request,*args,**kwargs)
-#     success_url='/project/employeelist/'
+
+
+def employee_dashboard(request):
+    # Fetch pending, approved, and rejected leaves
+    pending_leaves = Leave.objects.filter(status='Pending')
+    approved_leaves = Leave.objects.filter(status='Approved')
+    rejected_leaves = Leave.objects.filter(status='Rejected')
+    
+    # Pass the lists to the template context
+    return render(request, 'employee_dashboard.html', {
+        'pending_leaves': pending_leaves,
+        'approved_leaves': approved_leaves,
+        'rejected_leaves': rejected_leaves,
+    })
 
 

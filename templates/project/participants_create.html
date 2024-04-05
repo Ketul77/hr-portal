@@ -1,4 +1,11 @@
 {% extends "../base.html" %}
+{% block sidebar %}
+    {% if user.is_employee %}
+        {% include "employee_sidebar.html" %}
+    {% else %}
+        {% include "hr_sidebar.html" %}
+    {% endif %}
+{% endblock %}
 
 {% load static %}
 

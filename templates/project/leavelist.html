@@ -1,4 +1,11 @@
 {% extends "../base.html" %}
+{% block sidebar %}
+    {% if user.is_employee %}
+        {% include "employee_sidebar.html" %}
+    {% else %}
+        {% include "hr_sidebar.html" %}
+    {% endif %}
+{% endblock %}
 
 {% load static %}
 {% block content %}
@@ -45,21 +52,7 @@
                         <th>status</th>
                         <th>action</th> 
                     </tr>
-                    {% comment %} <td class="align-middle">
-                        <a href="{% url 'celebration_edit' c.pk %}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                            EDIT
-                        </a> {% endcomment %}
-                        {% comment %} <a href="{% url 'celebration_list' c.pk %}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Detail">
-                            DETAIL
-                        </a>
-                        <a href="{% url 'celebration_delete' c.pk %}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Delete">
-                            DELETE
-                        </a> {% endcomment %}
-                    
-                        
-                          {% comment %} <a href="" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                            CREATE TEAM
-                          </a> {% endcomment %}
+                  
                         </td>
                     </tr> 
                 </thead>
@@ -74,13 +67,13 @@
                             <td>{{ leave.status }}</td>
                             <td>{{ leave.action }}</td>
 
-                            <td class="align-middle">
-                              <form method ="post" action = "{% url 'update_status' leave.pk %}">
-                                {% csrf_token %}
-
-                                <input type = "submit" value = "Change Status">
-                              </td>
+                            
                               <td class="align-middle">
+                                <a href="{% url 'update_status' leave.pk %}" class="btn btn-outline-success">
+                                  CHANGE STATUS
+                              </a>
+
+
                               <a href="{% url 'leavesupdate' leave.pk %}" class="btn btn-danger">
                                   UPDATE
                               </a>
@@ -115,11 +108,9 @@
         <div class="btn-container">
 
           <button type="add" class="btn btn-primary mr-2">
-            <a href="{% url 'leavecreate' %}" class="btn btn-primary">ADD</a>
+            <a href="{% url 'leavecreate' %}" class="btn btn-primary"> New leave</a>
           </button>
-        <button type="add" class="btn btn-primary mr-2">
-          <a href="{% url 'login' %}" class="btn btn-primary">LOGOUT</a>
-        </button>
+       
     </div>
 </body>
 

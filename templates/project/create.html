@@ -1,35 +1,17 @@
 {% extends "../base.html" %}
 
+{% block sidebar %}
+    {% if user.is_employee %}
+        {% include "employee_sidebar.html" %}
+    {% else %}
+        {% include "hr_sidebar.html" %}
+    {% endif %}
+{% endblock %}
 {% load static %}
 
 {% load crispy_forms_tags %}
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  {% block head %}
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* CSS to center the card */
-    body, html {
-      height: 100%;
-      margin: 0;
-    }
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-    }
-    .card {
-      width: 80%; /* Adjust the width of the card as needed */
-    }
-  </style>
-  {% endblock %}
-</head>
 
-<body>
   {% block content %}
   <div class="container">
     <div class="card">
@@ -44,6 +26,3 @@
     </div>
   </div>
   {% endblock %}
-</body>
-
-</html>

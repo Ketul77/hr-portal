@@ -1,5 +1,4 @@
 from django  import forms 
-# from django.contrib.auth.forms import CelebrationCreationForm, LeaveCreationForm
 from .models import Celebration, Celebration_participants, Leave, Employee
 
 
@@ -12,10 +11,14 @@ class CelebrationCreationForm(forms.ModelForm):
         }
         # fields  ='__all__'
         
+
+
 class Celebration_participantsCreationForm(forms.ModelForm):
     class Meta:
         model = Celebration_participants
         exclude = ['user']
+
+
 
 class LeaveCreationForm(forms.ModelForm):
     class Meta:
@@ -24,6 +27,8 @@ class LeaveCreationForm(forms.ModelForm):
         widgets = {
             'date' : forms.DateInput(attrs= {'type':'date'})
         }
+
+        
 
 class EmployeeCreationForm(forms.ModelForm):
     class Meta:

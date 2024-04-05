@@ -112,13 +112,119 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: orange;
     /* Button container styles */
     text-align: center;
 
 
 }
 
+/* Styles for the outermost container */
+.css-1uf633j {
+    background-color: aliceblue;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Styles for the section containing HRMS SOFTWARE */
+  .css-rq4t18 {
+    background-color: navajowhite;
+    padding: 40px;
+    text-align: center;
+  }
+  
+  /* Styles for the section containing HR Made Simple */
+  .css-9rs2kq {
+    margin-top: 40px;
+  }
+  
+  /* Styles for the section containing Explore Now button */
+  .css-12washx {
+    margin-top: 40px;
+  }
+  
+  /* Styles for the section containing the image */
+  .css-bigl6o {
+    margin-left: 20px;
+    position: static;
+    display: flex;
+  justify-content: center; /* Horizontally center the items */
+
+  }
+  
+  /* Styles for the image */
+  .gatsby-image-wrapper {
+    border-radius: 8px;
+    overflow: hidden;
+    
+  }
+  
+  /* Styles for the paragraph */
+  .css-1wh9hyv p {
+    font-size: 18px;
+   
+    font-style: oblique;
+    line-height: 1.6;
+  }
+  
+  /* Styles for the link */
+  .css-1wh9hyv a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Styles for the Explore Now button */
+  .css-100e68w {
+    background-color: brown;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .css-100e68w:hover {
+    background-color: #0056b3;
+  }
+  
+  .css-12washx {
+    display: flex;
+    justify-content: space-between; /* Add space between the buttons */
+  }
+  
+/* Styles for the Explore Now button */
+.css-100e68w {
+    background-color: navajowhite;
+    color: purple;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Remove underline for the link */
+
+  }
+  
+  .css-100e68w:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Styles for the button container */
+  .css-1q1x3gf {
+    /* If you want to apply styles to the container, you can do it here */
+  }
+  
+  /* Styles for the link within the button */
+  .css-1yz7e9k {
+    color: inherit; /* Inherit text color from the button */
+    text-decoration: none; /* Remove underline for the link */
+  }
+  
 
 
     </style>
@@ -131,7 +237,6 @@ button:hover {
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -144,41 +249,74 @@ button:hover {
         <p>Welcome to our HR portal. We strive to provide comprehensive HR solutions tailored to meet your organization's needs.</p>
     </section>
 
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Recruitment and Hiring</li>
-            <li>Employee Training and Development</li>
-            <li>Performance Management</li>
-            <li>Employee Relations</li>
-            <li>Compensation and Benefits</li>
-        </ul>
-    </section>
+    <div class="css-1uf633j">
+        <div class="css-rq4t18">
+            <div class="css-9rs2kq">
+                <div class="css-1bhsmk8">
+                    <div class="css-q8nryn">
+                        <span class="css-mfgupt">HRMS SOFTWARE</span></div>
+                        <div class="css-11k8igx"><h1 class="css-1urzy6j">HR Made Simple</h1>
+                            <span class="css-1u9bd5r"><span class="css-1wh9hyv">
+                                <p>Bring simplicity, speed and efficiency to all repetitive <a href="/complete-guide-hrms/#what-are-the-common-functions-of-hrms-systems">HR functions</a>. Deliver world-class employee experience. Get operational HR out of the way, and make time for high-value work.</p>
+                            </span>
+                        </span>
+                    </div>
+                    <div class="css-12washx">
+                        <button id="hero-section-btn" class="css-100e68w">
+                            <div class="css-1q1x3gf">
+                                <a href="{% url 'hr_register' %}" class="css-1yz7e9k"> HR Explore Now</a>
+                            </div>
+                        </button>
+
+
+
+                        <button id="hero-section-btn" class="css-100e68w">
+                            <div class="css-1q1x3gf">
+                                <a href="{% url 'employee_register' %}" class="css-1yz7e9k"> Employee Explore Now</a>
+                            </div>
+                        </button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                                    <div class="css-bigl6o">
+                                        <div class="css-1guua0k">
+
+                                        </div>
+                                        <div data-gatsby-image-wrapper="" class="gatsby-image-wrapper gatsby-image-wrapper-constrained gatsby-image-container">
+                                            <div style="max-width:726.7081967213114px;display:block">
+                                                
+                                                <img aria-hidden="true" data-placeholder-image="" style="opacity:0;transition:opacity 500ms linear;object-fit:cover" decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAZCAYAAAAiwE4nAAAAAXNSR0IArs4c6QAABXpJREFUSEvNlmtsU2UYx//vubWnW7u1Xbtu3dYBY7Ax0LGBgFEJETCREEgENJHEL06jYgAjftPyVRKIMWjwkzGgBmMUcFwCOGXhpo4Zxn04xi4dW9vTru3pOafn8ppORyYBphCN/+RJTvJ/zvN7L8+b9wX+72ppaeHD4bAD/4Uef/yJjbWzGjtD9U3dzXPnhsPhMId/S/VzF9bUBgPqdx++R/dsfYM2VpfSeQ116/APxeBvKjEUWfvi0mZbXSiAxxqmYfWTTYhEouvHfUopTyktmBDCQwErC9G48JGZGLoVRTSWQHVFELND3qaK+npP3rcsa0s2q1yQ5ewFAPnY+lDA6KhSxoHCX2gH0U1UewqQkdVSD/TpeZ9hGL+VHq4mudFqAPkIPDBwbzgsiM5iX8eFK4hFkxgYSuLEuYu4NBAldso0/JlmSZkRyOro+G/WAwPbrnbNdIpC5dkrN6HpMnhWx6nLN1BY6ATLYkY+x7IsBCvmwFtaO/Z9L/0tYE/fwJJEMiFmTAGyLKG75xp0RUaBaIPDXd6Elh1lDMMYpmUil9NhGMaDAVtadvFL3/ro1bR39iabGkXXlR54K6Zi7XMrUDenCQkpiWwms8TedfbcoaMnVgEEPM+B4ziYpmm7J5BeaCu8m3lSHXi5PzryscyKVUJBCUQtic860ugzPejU/KiqDEJNDGF+qiPQEt5Rc+l677eEkG0AtrEs+809gfGhyLKRI3vepJSy40Y4HGZUTXs+m0mhmGpw2Sj4yjn4eoTFyi8uo9/uA7zTwLEEqmEhNdiDxjmrfmFZdks+CCFfj9eKHd8bjB/+fNYY8OqXO+cNRyWHWOJ/gd7obKM3OvMtjR8i8FimWWem4tAuHoEgCMhVzEKR3Q4XQ8CyLDLuSiQ0BiY4+OwcvE80Nk+cDR29tcDoPb8XvO2MAvbdgdY967n+m4OFUjq52uBsVaGpVnlGVj8BsKxHhp8jpMiiQJzzgVoyBJcXumXC4xCRVFQIaho531RELEBMDYPnuIaFazaJp7/aoWx/+7VnejtOfgkQZriv74ypZg/bCLOfTBiQd+crKxa5fYG9NaHA5vkHMFgtqPvk6CCKaQ4q4SAUeQHRCcYyYOZ3Q0lDSUaRGY1BiQ5BDE6j2WHt2f6vNg63nzx94Oix7/2/HT77dBvw4zjk9p4BUA52XLu2aHp5yO9zv1MFvWFffyrAqTKyUhQpChCOB8fzULMyDCMHnVJIiRjUVBLUNGDydmKGpi5bWWl7BXKctP58eXlbJNo+cZknAsfk5vm+ioD7JdEuVu3vkcEqKajRARgMB87hBJNvfbsDRk5FLpuBrikwUxLlXR4i+iqg2ewFlaMD/PH29qOtZy++f2f9vwAXL17MtfZpr9N45Mn+Ucp2xdIgei5/vFBQVg17oQs8x8PKZcfyCSGgoOAs/ToRHIxFGFHIKWi/KeH8kLoZqVvd9wX29vbSkimzajsSqO1KGcWCobG5dEqxSoK0yOtnLUWGoWbyVxEIk59pAXjRCWITOX00dlCXU6WMkj5EBOGDKTV1Eam7s+9O4MSmua36NWFBunbiUUXPrV5eW3KxN65+8FOc85BSDwJOFxws+0fjUAqoGUQGe2mzm53XPRTvH/7t/Ajuo7sCJ2r/p7s2+cvKtndduoqjp37FsRsS/FRGIhZD84wqVPicqJteg7JA+fp1r27YPVm9Sd8kLnfxgspgEFNCVXhq0XxslCQMDvRDkpIIlpfB53GDYTmMxKX8od89Wb3JgKTA4ZjC/LkOrqJiOF1FCAXLYYHANA0YOQOmoWN4ZKRkklpjuu9tsWHDBoEALk3TYOjG2LWTzcpQVRWGrkNTNVjUgkUpbIJQl39C3q9e3vsdBMV6GsWE2q8AAAAASUVORK5CYII=" alt="">
+                                                <img width="726.7081967213114" height="636" data-main-image="" style="object-fit:contain;height:100%;opacity:1" sizes="(min-width: 726.7081967213114px) 726.7081967213114px, 100vw" decoding="async" loading="eager" src="https://www.datocms-assets.com/40521/1705950087-hrms-1.png?auto=format&amp;dpr=0.27&amp;fit=max&amp;w=2788" 
+                            srcset="https://www.datocms-assets.com/40521/1705950087-hrms-1.png?auto=format&amp;dpr=0.07&amp;fit=max&amp;w=2788 182w,
+https://www.datocms-assets.com/40521/1705950087-hrms-1.png?auto=format&amp;dpr=0.14&amp;fit=max&amp;w=2788 364w,
+https://www.datocms-assets.com/40521/1705950087-hrms-1.png?auto=format&amp;dpr=0.27&amp;fit=max&amp;w=2788 727w,
+https://www.datocms-assets.com/40521/1705950087-hrms-1.png?auto=format&amp;dpr=0.53&amp;fit=max&amp;w=2788 1454w" alt="Hero Image">
+<noscript>
+    <img width="726.7081967213114" height="636" data-main-image="" style="object-fit:contain;height:100%;opacity:1" sizes="(min-width: 726.7081967213114px) 726.7081967213114px, 100vw" decoding="async" loading="eager" src="https://www.datocms-assets.com/40521/1705950087-hrms-1.png?auto=format&amp;dpr=0.27&amp;fit=max&amp;w=2788" srcSet="https://www.datocms-assets.com/40521/1705950087-hrms-1.png?auto=format&amp;dpr=0.07&amp;fit=max&amp;w=2788 182w,
+https://www.datocms-assets.com/40521/1705950087-hrms-1.png?auto=format&amp;dpr=0.14&amp;fit=max&amp;w=2788 364w,
+https://www.datocms-assets.com/40521/1705950087-hrms-1.png?auto=format&amp;dpr=0.27&amp;fit=max&amp;w=2788 727w,
+https://www.datocms-assets.com/40521/1705950087-hrms-1.png?auto=format&amp;dpr=0.53&amp;fit=max&amp;w=2788 1454w" alt="Hero Image"/></noscript></div></div></div></div>
+  
 
     <section id="contact">
         <h2>Contact Us</h2>
         <p>If you have any questions or inquiries, feel free to reach out to us:</p>
         <address>
             HR Portal<br>
-            123 HR Street<br>
-            HR City, HR 12345<br>
-            Phone: 123-456-7890<br>
-            Email: info@hrportal.com
+            Ketul Sadat<br>
+            Ahmedabad City, 380001<br>
+            Phone: +91 9512422697<br>
+            Email: ketulsadat7@gmail.com
         </address>
-        <button onclick="redirectToApp()">Go to HR App</button>
+       
     </section>
 
     <footer>
         <p>&copy; 2024 HR Portal. All rights reserved.</p>
     </footer>
 
-    <script>
-        function redirectToApp() {
-            // Replace 'your-app-scheme://' with the actual scheme of your application
-            window.location.href = '{% url 'login' %}';
-        }
-    </script>
-    
+   
   
 </body>
 

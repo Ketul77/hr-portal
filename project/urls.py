@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
 from .views import*
-# projectUpdateview ,projectDeleteview, CelebrationCreationView , CelebrationListView,  Celebration_participantsCreationView, Celebration_participantsListView,EmployeeListView, EmployeeCreationView, LeaveListView, LeavecreationView
 from django.contrib.auth.views import LogoutView
 from django.shortcuts import render,HttpResponse,redirect
 from django.contrib.auth.models import User
@@ -25,8 +24,6 @@ urlpatterns = [
     path("leavesdelete/<int:pk>/", LeaveDeleteView.as_view(), name='leavesdelete'),
     path("leavesdetail/<int:pk>/", LeaveDetailView.as_view(), name='leavesdetail'),
     path("leavesupdate/<int:pk>/", LeaveUpdateView.as_view(), name='leavesupdate'),
-    # path("deletee/<int:pk>/", EmployeeDeleteView.as_view(), name='deletee'),
-    path("participantsdelete/<int:pk>/", Celebration_participantsDeleteView.as_view(), name='participantsdelete'),
     path("participantsdelete/<int:pk>/", Celebration_participantsDeleteView.as_view(), name='participantsdelete'),
     path("participantsdetail/<int:pk>/", Celebration_participantsDetailView.as_view(), name='participantsdetail'),
     path("participantsupdate/<int:pk>/", Celebration_participantsUpdateView.as_view(), name='participantsupdate'),

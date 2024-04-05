@@ -5,8 +5,7 @@ from .models import User
 from .forms import HrCreationForm,EmployeeCreationForm
 from django.contrib.auth.views import LoginView 
 from django.views.generic import FormView, TemplateView,ListView
-# from project.models  import Project
-# Create your views here.
+
 
 class HrRegisterView(CreateView):
     model = User
@@ -36,10 +35,9 @@ class UserLoginView(LoginView):
 class HrDashboardView(ListView):
     
     def get(self, request, *args, **kwargs):
-        #logic to get all the projects
+       
         print("HrDashboardView")
-        # projects = Project.objects.all() #select * from project
-        # print(".............................................",projects)
+      
         
         return render(request, 'user/hr_dashboard.html')
     
@@ -49,26 +47,14 @@ class HrDashboardView(ListView):
 class EmployeeDashboardView(ListView):
     
     def get(self, request, *args, **kwargs):
-        #logic to get all the projects
+       
         print("EmployeeDashboardView")
-        # projects = Project.objects.all() #select * from project
-        # print(".............................................",projects)
+       
         
         return render(request, 'user/employee_dashboard.html')
     
     
     template_name = 'user/employee_dashboard.html'
 
-# class HrDashboardView(ListView):
-    
-#     def get(self, request, *args, **kwargs):
-#         #logic to get all the projects
-#         print("HrDashboardView")
-#         # projects = Project.objects.all() #select * from project
-#         # print(".............................................",projects)
-        
-#         return render(request, 'user/hr_dashboard.html')
-    
-    
-#     template_name = 'user/hr_dashboard.html'
+
     

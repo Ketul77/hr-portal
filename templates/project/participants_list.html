@@ -1,5 +1,12 @@
 {% extends "../base.html" %}
 
+{% block sidebar %}
+    {% if user.is_employee %}
+        {% include "employee_sidebar.html" %}
+    {% else %}
+        {% include "hr_sidebar.html" %}
+    {% endif %}
+{% endblock %}
 {% load static %}
 {% block content %}
 {% load crispy_forms_tags %}
@@ -32,7 +39,7 @@
   <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title"> CELEBRATION LIST</h4>
+        <h4 class="card-title"> Participants List</h4>
         
         {% if user.is_authenticated %}
         <p>Welcome, {{ user.username }}</p>
@@ -43,28 +50,14 @@
                   <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>user</th>
-                        <th>celebration_participants</th>
-                        <th>department</th>
-                        <th>celebration</th>
-                        <th>status</th>
+                        <th>User</th>
+                        <th>Celebration Participants</th>
+                        <th>Department</th>
+                        <th>Celebration</th>
+                        <th>Status</th>
                         <th>Action</th> 
                     </tr>
-                    {% comment %} <td class="align-middle">
-                        <a href="{% url 'celebration_edit' c.pk %}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                            EDIT
-                        </a> {% endcomment %}
-                        {% comment %} <a href="{% url 'celebration_list' c.pk %}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Detail">
-                            DETAIL
-                        </a>
-                        <a href="{% url 'celebration_delete' c.pk %}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Delete">
-                            DELETE
-                        </a> {% endcomment %}
                     
-                        
-                          {% comment %} <a href="" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                            CREATE TEAM
-                          </a> {% endcomment %}
                         </td>
                     </tr> 
                 </thead>
@@ -103,13 +96,7 @@
             </table>
         </div>
           <div class="add-list" >
-            {% comment %} <h2 >Add List</h2>  {% endcomment %}
-            {% comment %} <form action="#" method="post"> {% endcomment %}
-                {% comment %} <input type="text" name="description" placeholder="Description" required>
-                <input type="number" name="amount" placeholder="Amount" min="0" step="0.01" required>
-                <input type="date" name="date" required>  
-              <input type="submit" value="Add List">
-            </form>  {% endcomment %}
+          
         </div> 
         <style>
             /* Centering the button horizontally */
@@ -121,11 +108,9 @@
           <div class="btn-container">
 
             <button type="add" class="btn btn-primary mr-2">
-              <a href="{% url 'participants_create' %}" class="btn btn-primary">ADD</a>
+              <a href="{% url 'participants_create' %}" class="btn btn-primary">Let's Participant</a>
             </button>
-          <button type="add" class="btn btn-primary mr-2">
-            <a href="{% url 'login' %}" class="btn btn-primary">LOGOUT</a>
-          </button>  
+         
     </div>
 </body>
 
